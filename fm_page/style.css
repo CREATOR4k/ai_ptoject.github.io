@@ -1,0 +1,109 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --accent: #ff3e00; /* Яркий акцентный цвет 2025 года */
+    --gray: #f4f4f4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-y: hidden;
+}
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo { font-weight: 900; letter-spacing: -1px; font-size: 1.2rem; }
+.nav-links span { margin-right: 30px; font-size: 0.9rem; opacity: 0.6; }
+.cta-button { 
+    background: var(--text); color: white; padding: 12px 25px; 
+    text-decoration: none; border-radius: 50px; font-size: 0.9rem; 
+}
+
+/* Горизонтальный скролл */
+.horizontal-wrapper {
+    display: flex;
+    width: 300vw;
+    height: 100vh;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+}
+
+.panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+/* Типографика */
+h1 {
+    font-size: 12vw;
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+}
+
+.sub-text { font-size: 1.5rem; margin-top: 20px; max-width: 400px; opacity: 0.7; }
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+    width: 100%;
+}
+
+.bento-item {
+    background: var(--gray);
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bento-item.big { grid-row: span 2; background: var(--accent); color: white; }
+
+/* Кастомный курсор */
+.cursor {
+    width: 20px; height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.1s;
+}
+
+/* Адаптация под телефоны */
+@media (max-width: 768px) {
+    body { overflow-y: auto; cursor: auto; }
+    .cursor { display: none; }
+    .horizontal-wrapper { display: block; width: 100%; }
+    .panel { width: 100%; height: auto; padding: 80px 20px; }
+    h1 { font-size: 18vw; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .navbar { padding: 20px; background: white; }
+}
+
+/* Плавность */
+.horizontal-wrapper::-webkit-scrollbar { display: none; }
