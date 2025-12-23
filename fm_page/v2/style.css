@@ -1,25 +1,29 @@
-:root {
-    --bg: #0a0a0a;
-    --accent: #007aff; /* Глубокий синий Apple style */
-    --text: #ffffff;
-    --text-dim: #a0a0a0;
-    --card-bg: #161618;
+* { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    background: var(--bg);
-    color: var(--text);
+    /* background-image: url("img/fhd.png"); */
+    background-color: #0a0a0a;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     line-height: 1.6;
 }
 
-/* Навигация */
+.hero-description {
+    max-width: 500px;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
 .navbar {
     position: fixed;
-    top: 0; width: 100%;
+    top: 0; 
+    width: 100%;
     padding: 30px 60px;
     display: flex;
     justify-content: space-between;
@@ -28,29 +32,41 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.logo { font-weight: 900; letter-spacing: -1px; font-size: 1.4rem; }
-mark { background: var(--accent); color: white; padding: 0 5px; border-radius: 4px; }
+.logo { 
+    font-weight: 900; 
+    letter-spacing: -1px; 
+    font-size: 1.4rem; 
+}
+
+mark { 
+    background: #007aff; 
+    color: white; 
+    padding: 0 5px; 
+    border-radius: 4px; 
+}
 
 .test-btn-top {
     text-decoration: none;
-    color: var(--text);
-    border: 1px solid var(--text);
+    color:  #ffffff;
+    border: 1px solid #ffffff;
     padding: 10px 25px;
     border-radius: 100px;
     font-size: 0.85rem;
     transition: 0.3s;
 }
 
-.test-btn-top:hover { background: var(--text); color: var(--bg); }
+.test-btn-top:hover { 
+    background: #ffffff; 
+    color: #0a0a0a; 
+}
 
-/* Контейнер скролла */
 .horizontal-container {
-    display: flex;
+    display: column;
     width: 300vw;
     height: 100vh;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    /* overflow-x: auto;
+    scroll-snap-type: x mandatory;*/
+    scrollbar-width: none; 
 }
 
 .panel {
@@ -63,7 +79,6 @@ mark { background: var(--accent); color: white; padding: 0 5px; border-radius: 4
     padding: 0 100px;
 }
 
-/* Секция Hero */
 h1 {
     font-size: 8rem;
     font-weight: 900;
@@ -76,43 +91,38 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 0.8rem;
-    color: var(--accent);
+    color: #007aff;
     font-weight: 700;
 }
 
-.hero-description {
-    max-width: 500px;
-    margin-top: 40px;
-    font-size: 1.2rem;
-    color: var(--text-dim);
-}
-
-/* Секция деталей (Текстовый блок) */
 .content-box {
-    display: grid;
+    display: column;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     max-width: 1100px;
 }
 
-h2 { font-size: 3rem; margin-bottom: 30px; letter-spacing: -1px; }
+h2 { 
+    font-size: 3rem; 
+    margin-bottom: 30px; 
+    letter-spacing: -1px; 
+}
 
 .column p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    color: var(--text-dim);
+    color: #a0a0a0;;
 }
 
 .values-list { list-style: none; }
 .values-list li {
     margin-bottom: 15px;
     padding-left: 20px;
-    border-left: 2px solid var(--accent);
+    border-left: 2px solid #007aff;
 }
 
-/* Секция Теста */
 .test-card {
-    background: var(--card-bg);
+    background: #161618;;
     width: 100%;
     max-width: 1000px;
     padding: 80px;
@@ -135,7 +145,7 @@ h2 { font-size: 3rem; margin-bottom: 30px; letter-spacing: -1px; }
 }
 
 .main-test-button {
-    background: var(--accent);
+    background: #007aff;
     color: white;
     border: none;
     padding: 20px 40px;
@@ -149,9 +159,11 @@ h2 { font-size: 3rem; margin-bottom: 30px; letter-spacing: -1px; }
     transition: 0.3s;
 }
 
-.main-test-button:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(0,122,255,0.3); }
-
-/* Адаптация под телефоны */
+.main-test-button:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 20px 40px rgba(0,122,255,0.3); 
+}
+/* 
 @media (max-width: 768px) {
     .horizontal-container {
         display: block;
@@ -169,4 +181,6 @@ h2 { font-size: 3rem; margin-bottom: 30px; letter-spacing: -1px; }
     .navbar { padding: 20px; }
 }
 
-.horizontal-container::-webkit-scrollbar { display: none; }
+.horizontal-container::-webkit-scrollbar { 
+    display: none; 
+} */
